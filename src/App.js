@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    throw new Error('woops');
+  }
   render() {
     return (
       <div className="App">
