@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 class App extends Component {
   componentDidMount() {
-    throw new Error('woops');
+    // 延迟2秒，更加直观的看到效果
+    setTimeout(() => {
+      throw new Error("woops");
+    }, 2000);
   }
   render() {
     return (
