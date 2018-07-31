@@ -2,7 +2,7 @@ const path = require("path");
 const glob = require("glob");
 const { existsSync, unlink } = require("fs");
 const { exec } = require("child_process");
-const { release } = require("../package.json");
+const { release } = require("../release.json");
 const { devtool, output } = require("../config/webpack.config.prod");
 
 // source-map文件路径，用于最后删除

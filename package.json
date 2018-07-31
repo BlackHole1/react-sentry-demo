@@ -48,8 +48,10 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js && npm run post-sym",
+    "build:sentry": "npm run transform-release && npm run build && npm run post-sym",
+    "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
+    "transform-release": "node scripts/transform-release.js",
     "post-sym": "cross-env NODE_ENV=production SENTRY_PROPERTIES=./sentry.properties node scripts/post-sym.js"
   },
   "jest": {

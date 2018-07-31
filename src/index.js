@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import SentryBoundary from "./SentryBoundary";
-const { release } = require("../package.json");
+import { release } from "./release.json";
 
 Raven.config("https://bea834ff9ce34d329762dca3117ce34d@sentry.io/1248812", {
   release: release,
