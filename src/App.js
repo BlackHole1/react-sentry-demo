@@ -6,7 +6,7 @@ class App extends Component {
   componentDidMount() {
     // 延迟2秒，更加直观的看到效果
     setTimeout(() => {
-      throw new Error("woops");
+      throw new Error("woops!");
     }, 2000);
   }
   render() {
