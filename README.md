@@ -121,6 +121,6 @@ sentry-cli releases files {releases字段值} upload-sourcemaps {js文件和js.m
 
  ### 终章
 
- 现在我们把上面的`npm script`统一一下，成为新的`npm script`: "build:sentry": "npm run transform-release && npm run build && npm run post-sym"
+ 现在我们把上面的`npm script`统一一下，成为新的`npm script`: "build:sentry": `"npm run transform-release && npm run build && npm run post-sym"`
 
  这样，以后我们写完代码，就可以通过`npm run build:sentry`来自动化了。后续的版本迭代，只需要修改`package.json`里的`releases`就好。
