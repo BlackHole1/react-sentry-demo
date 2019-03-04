@@ -12,7 +12,8 @@ let sourcemapPath = [];
 const buildPath = output.path;
 
 // 获取存放js文件的目录
-const jsFolders = output.filename.split("[")[0];
+const jsFoldersWithSlash = output.filename.split("[")[0];
+const jsFolders = jsFoldersWithSlash.substring(0, jsFoldersWithSlash.length - 1);
 
 // sentry-ci可执行程序文件路径
 const sentryCliPath = `${path.join(
@@ -78,7 +79,7 @@ function uploadSourcemapsFile(sourcemapsDir) {
     const createRelease = `${sentryCliPath} releases new ${release}`;
 
     // 上传source-map文件到sentry的release版本上
-    const uploadSourcemaps = `${sentryCliPath} releases files ${release} upload-sourcemaps ${sourcemapsDir} --url-prefix '~/${jsFolders}'`;
+    const uploadSourcemaps = `${sentryCliPath} releases files ${release} upload-sourcemaps ${sourcemapsDir} --url-prefix ~/${jsFolders}`;
 
     exec(createRelease, (err, output) => {
       if (err) {
